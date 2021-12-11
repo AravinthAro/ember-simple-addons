@@ -1,0 +1,1 @@
+export { default } from 'ember-simple-addons/components/simple-addons/navigation-header';

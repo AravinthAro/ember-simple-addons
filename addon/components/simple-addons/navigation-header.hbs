@@ -1,0 +1,35 @@
+<nav
+  class="simple-addons-nav-header-wrapper
+    {{if @config.bar.isSticky 'simple-addons-nav-header__sticky'}}"
+  style="grid-template-columns:{{@data.logo.width}} 1fr auto;"
+>
+
+  <LinkTo @route="home">
+    <img src={{@data.logo.url}} alt="Logo" class="simple-addons-logo-img" />
+  </LinkTo>
+
+  <ol class="simple-addons-nav-container" data-right-align={{@config.nav.alignRight}}>
+    {{#each @data.nav as |nav|}}
+      <li class="simple-addons-nav-item">
+        <LinkTo class="simple-addons-nav-link" @route={{nav.route}}>
+          {{nav.title}}
+        </LinkTo>
+      </li>
+    {{/each}}
+  </ol>
+
+  <div class="simple-addons-nav-options__right">
+
+    {{#unless @config.options.hideGlobalSearch}}
+      {{input}}
+    {{/unless}}
+
+    {{#if (has-block-params)}}
+      {{yield @data.options}}
+    {{else if (has-block)}}
+      {{yield}}
+    {{/if}}
+
+  </div>
+
+</nav>

@@ -1,0 +1,51 @@
+#{$simple-addons-main-namespace} {
+  &nav-header-wrapper {
+    background-color: $simple-addons-nav-header-bg;
+    box-shadow: $simple-addons-box-shadow-alpha;
+    display: grid;
+  }
+
+  &nav-header__sticky {
+    position: sticky;
+    top: 0;
+  }
+
+  &nav-container {
+    display: flex;
+    padding: 0 rem(10);
+
+    &[data-right-align] {
+      justify-content: flex-end;
+    }
+  }
+
+  &nav-item {
+    display: inline-flex;
+  }
+
+  &nav-link {
+    align-items: center;
+    color: $simple-addons-base-clr-beta;
+    cursor: pointer;
+    display: inline-flex;
+    padding: 0 rem(20);
+    transition: set-transition(background, color);
+
+    &:hover,
+    &:focus-visible,
+    &:focus {
+      background-color: $simple-addons-nav-header-bg-hover;
+      color: $simple-addons-base-clr-alpha;
+      outline: 0;
+    }
+  }
+
+  &logo-img {
+    width: 100%;
+  }
+
+  &nav-options__right {
+    align-items: center;
+    display: flex;
+  }
+}

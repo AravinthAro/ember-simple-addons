@@ -1,0 +1,25 @@
+@function rem($pixels) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @return $pixels / 16px * 1rem;
+}
+
+@function set-transition($list...) {
+  $result-string: null;
+  $len: length($list);
+  $transition-props: .25s ease-in-out;
+  $comma: ', ';
+  @for $i from 1 through $len {
+    @if $i == $len {
+      $comma: null;
+    }
+    $result-string: $result-string +
+    nth($list, $i) +
+    ' ' +
+    $transition-props +
+    $comma;
+  }
+  @return $result-string;
+}
